@@ -131,16 +131,20 @@ function Footer() {
   //   else alert("Sorry");
   return (
     <footer className="footer">
-      {isOpen && (
-        <div className="order">
-          <p>
-            We are currently open until {closeHoure}:00. Come visit us or order
-            online!
-          </p>
-          <button className="btn">Order</button>
-        </div>
-      )}
+      {isOpen && <Order closeHoure={closeHoure} />}
     </footer>
+  );
+}
+
+function Order(props) {
+  return (
+    <div className="order">
+      <p>
+        We are currently open until {props.closeHoure}:00. Come visit us or
+        order online!
+      </p>
+      <button className="btn">Order</button>
+    </div>
   );
 }
 
